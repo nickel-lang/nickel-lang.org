@@ -1,5 +1,7 @@
 import * as React from "react"
 import Layout from "../components/layout"
+import { SiteHead as Head } from "../components/site-head"
+export { Head }
 import {StaticImage} from "gatsby-plugin-image";
 import mergeImage from '../images/merge-2.png';
 import validateImage from '../images/validate-2.png';

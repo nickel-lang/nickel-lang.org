@@ -15,49 +15,41 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^7.1.0",
-    "@fortawesome/free-brands-svg-icons": "^7.1.0",
-    "@fortawesome/free-solid-svg-icons": "^7.1.0",
-    "@fortawesome/react-fontawesome": "^3.1.1",
+    "@fortawesome/fontawesome-svg-core": "^7.3.0",
+    "@fortawesome/free-brands-svg-icons": "^7.3.0",
+    "@fortawesome/free-solid-svg-icons": "^7.3.0",
+    "@fortawesome/react-fontawesome": "^3.3.1",
     "@loadable/component": "^5.16.7",
-    "ace-builds": "^1.43.5",
+    "ace-builds": "^1.44.0",
     "ansi-to-react": "^6.2.6",
-    "bootstrap": "^5.3.3",
-    "create-react-class": "^15.7.0",
-    "gatsby": "^5.16",
-    "gatsby-plugin-image": "^3.15.0",
+    "bootstrap": "^5.3.8",
+    "gatsby": "^5.16.1",
+    "gatsby-plugin-image": "^3.16.0",
     "gatsby-plugin-json-remark": "^1.1.5",
     "gatsby-plugin-netlify": "^5.1.1",
-    "gatsby-plugin-react-helmet": "^6.15.0",
     "gatsby-plugin-sass": "^6.16.0",
-    "gatsby-plugin-sharp": "^5.15",
-    "gatsby-remark-autolink-headers": "^6.15.0",
+    "gatsby-plugin-sharp": "^5.16.0",
+    "gatsby-remark-autolink-headers": "^6.16.0",
     "gatsby-remark-classes": "^1.0.2",
     "gatsby-remark-prismjs": "^7.16.0",
-    "gatsby-source-filesystem": "^5.15.0",
-    "gatsby-transformer-json": "^5.15.0",
-    "gatsby-transformer-remark": "^6.15.0",
-    "gatsby-transformer-sharp": "^5.15.0",
-    "jquery": "^3.7.1",
+    "gatsby-source-filesystem": "^5.16.0",
+    "gatsby-transformer-json": "^5.16.0",
+    "gatsby-transformer-remark": "^6.16.0",
+    "gatsby-transformer-sharp": "^5.16.0",
     "nickel-repl": "file:nickel-repl",
-    "popper.js": "^1.16.1",
     "prismjs": "^1.30.0",
-    "react": "^18.3.1",
+    "react": "^19.2.7",
     "react-ace": "^14.0.1",
     "react-bootstrap": "^2.10.10",
     "react-bootstrap-icons": "^1.11.6",
-    "react-dom": "^18.3.1",
-    "react-helmet": "^6.1.0",
-    "sass": "^1.97.3",
+    "react-dom": "^19.2.7",
+    "sass": "^1.101.0",
     "react-markdown": "^10.1.0"
   },
   "overrides": {
     "ansi-to-react": {
-      "react": "^18.2.0",
-      "react-dom": "^18.2.0"
-    },
-    "react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825": {
-      "react": "^18.2.0"
+      "react": "^19.0.0",
+      "react-dom": "^19.0.0"
     }
   }
 }
