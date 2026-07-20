@@ -1,6 +1,5 @@
 import React from "react"
 import {graphql, StaticQuery} from "gatsby"
-import {Helmet} from "react-helmet"
 import Header from "./header"
 import Footer from "./footer"
 
@@ -11,9 +10,6 @@ export default function Layout({children}) {
       query SiteData {
         site {
           siteMetadata {
-            title
-            description
-            keywords
             menuLinks {
               name
               link
@@ -24,14 +20,6 @@ export default function Layout({children}) {
     `}
             render={data => (
                 <React.Fragment>
-                    <Helmet
-                        title={data.site.siteMetadata.title}
-                        meta={[
-                            {name: "description", content: data.site.siteMetadata.description},
-                            {name: "keywords", content: data.site.siteMetadata.keywords},
-                        ]}
-                    >
-                    </Helmet>
                     <Header menuLinks={data.site.siteMetadata.menuLinks} />
                     <div>
                         {children}
@@ -42,4 +30,3 @@ export default function Layout({children}) {
         />
     )
 }
-

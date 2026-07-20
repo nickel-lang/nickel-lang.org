@@ -44,7 +44,6 @@ module.exports = {
     },
     plugins: [
         'gatsby-plugin-netlify',
-        'gatsby-plugin-react-helmet',
         'gatsby-plugin-sharp',
         'gatsby-transformer-sharp',
         'gatsby-plugin-image',
@@ -62,7 +61,15 @@ module.exports = {
                 path: `${__dirname}/src/nickel-stdlib-doc`,
             },
         },
-        `gatsby-plugin-sass`,
+        {
+            resolve: `gatsby-plugin-sass`,
+            options: {
+                sassOptions: {
+                    quietDeps: true,
+                    silenceDeprecations: ["legacy-js-api", "import", "if-function", "color-functions", "global-builtin"],
+                },
+            },
+        },
         {
           resolve: `gatsby-transformer-remark`,
           options: {

@@ -1,5 +1,7 @@
 import * as React from "react";
 import Layout from "../../components/layout-sidebar";
+import { SiteHead as Head } from "../../components/site-head"
+export { Head }
 import { graphql } from "gatsby";
 import SidebarToc from "../../components/stdlib-toc";
 import { useEffect } from "react";

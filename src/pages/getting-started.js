@@ -1,6 +1,8 @@
 import * as React from "react"
 import {useEffect} from "react"
 import Layout from "../components/layout"
+import { SiteHead as Head } from "../components/site-head"
+export { Head }
 
 import Prism from "prismjs";
 import "prismjs/components/prism-bash";
