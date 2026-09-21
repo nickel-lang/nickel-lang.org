@@ -39,22 +39,22 @@
     "gatsby-transformer-sharp": "^5.15.0",
     "nickel-repl": "file:nickel-repl",
     "prismjs": "^1.30.0",
-    "react": "^18.3.1",
+    "react": "^19.3.0",
     "react-ace": "^15.0.0",
     "react-bootstrap": "^2.10.10",
     "react-bootstrap-icons": "^1.11.6",
-    "react-dom": "^18.3.1",
+    "react-dom": "^19.3.0",
     "react-helmet": "^6.1.0",
     "react-markdown": "^10.1.0",
     "sass": "^1.104.1"
   },
   "overrides": {
     "ansi-to-react": {
-      "react": "^18.2.0",
-      "react-dom": "^18.2.0"
+      "react": "^19.0.0",
+      "react-dom": "^19.0.0"
     },
     "react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825": {
-      "react": "^18.2.0"
+      "react": "^19.0.0"
     }
   }
 }
