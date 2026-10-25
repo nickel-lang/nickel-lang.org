@@ -20,7 +20,7 @@
     "@fortawesome/free-solid-svg-icons": "^7.3.1",
     "@fortawesome/react-fontawesome": "^3.5.0",
     "@loadable/component": "^5.16.7",
-    "ace-builds": "^1.44.0",
+    "ace-builds": "^1.45.2",
     "ansi-to-react": "^6.2.6",
     "bootstrap": "^5.3.8",
     "gatsby": "^5.16.1",
@@ -39,14 +39,14 @@
     "gatsby-transformer-sharp": "^5.16.0",
     "nickel-repl": "file:nickel-repl",
     "prismjs": "^1.30.0",
-    "react": "^19.3.0",
+    "react": "^19.3.1",
     "react-ace": "^15.0.0",
     "react-bootstrap": "^2.10.10",
     "react-bootstrap-icons": "^1.11.6",
-    "react-dom": "^19.3.0",
+    "react-dom": "^19.3.1",
     "react-helmet": "^6.1.0",
     "react-markdown": "^10.1.0",
-    "sass": "^1.104.1"
+    "sass": "^1.106.1"
   },
   "overrides": {
     "ansi-to-react": {
