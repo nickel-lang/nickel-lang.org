@@ -1,5 +1,6 @@
 import * as React from "react"
 import Layout from "../components/layout"
+import Seo from "../components/seo"
 import {StaticImage} from "gatsby-plugin-image";
 import mergeImage from '../images/merge-2.png';
 import validateImage from '../images/validate-2.png';
@@ -44,15 +45,15 @@ const HIDE_SCROLLDOWN_ARROW_AFTER = 100;
 const IndexPage = () => {
   const [isArrowVisible, setArrowVisible] = React.useState(true);
 
-  const onScroll = () => {
-    const currentScroll = document.body.scrollTop || document.documentElement.scrollTop;
-
-    if(isArrowVisible && currentScroll > HIDE_SCROLLDOWN_ARROW_AFTER) {
-      setArrowVisible(false);
-    }
-  };
-
   React.useEffect(() => {
+    const onScroll = () => {
+      const currentScroll = document.body.scrollTop || document.documentElement.scrollTop;
+
+      if(currentScroll > HIDE_SCROLLDOWN_ARROW_AFTER) {
+        setArrowVisible(false);
+      }
+    };
+
     window.addEventListener('scroll', onScroll);
     return () =>
         window.removeEventListener('scroll', onScroll);
@@ -124,5 +125,7 @@ const IndexPage = () => {
       </Layout>
   )
 };
+
+export const Head = () => <Seo />
 
 export default IndexPage

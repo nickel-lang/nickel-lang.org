@@ -1,6 +1,7 @@
 import * as React from "react"
 import {useEffect} from "react"
 import Layout from "../components/layout"
+import Seo from "../components/seo"
 
 import Prism from "prismjs";
 import "prismjs/components/prism-bash";
@@ -263,5 +264,7 @@ const IndexPage = () => {
         </Layout>
     );
 };
+
+export const Head = () => <Seo />
 
 export default IndexPage

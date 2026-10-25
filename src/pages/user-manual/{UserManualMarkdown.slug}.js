@@ -1,5 +1,6 @@
 import * as React from "react"
 import Layout from "../../components/layout"
+import Seo from "../../components/seo"
 import { graphql } from "gatsby"
 import UserManualToc from "../../components/usermanual-toc";
 
@@ -45,5 +46,7 @@ export const pageQuery = graphql`
     }
   }
  `;
+
+export const Head = () => <Seo />
 
 export default UserManual

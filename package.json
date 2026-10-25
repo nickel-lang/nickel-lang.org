@@ -27,7 +27,6 @@
     "gatsby-plugin-image": "^3.16.0",
     "gatsby-plugin-json-remark": "^1.1.5",
     "gatsby-plugin-netlify": "^5.1.1",
-    "gatsby-plugin-react-helmet": "^6.16.0",
     "gatsby-plugin-sass": "^6.16.0",
     "gatsby-plugin-sharp": "^5.16.0",
     "gatsby-remark-autolink-headers": "^6.16.0",
@@ -44,7 +43,6 @@
     "react-bootstrap": "^2.10.10",
     "react-bootstrap-icons": "^1.11.6",
     "react-dom": "^19.3.1",
-    "react-helmet": "^6.1.0",
     "react-markdown": "^10.1.0",
     "sass": "^1.106.1"
   },
