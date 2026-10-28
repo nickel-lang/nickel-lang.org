@@ -44,7 +44,6 @@ module.exports = {
     },
     plugins: [
         'gatsby-plugin-netlify',
-        'gatsby-plugin-react-helmet',
         'gatsby-plugin-sharp',
         'gatsby-transformer-sharp',
         'gatsby-plugin-image',
@@ -62,7 +61,17 @@ module.exports = {
                 path: `${__dirname}/src/nickel-stdlib-doc`,
             },
         },
-        `gatsby-plugin-sass`,
+        {
+            resolve: `gatsby-plugin-sass`,
+            options: {
+                sassOptions: {
+                    // Bootstrap's own sources still use deprecated Sass features that we can't fix.
+                    quietDeps: true,
+                    // Gatsby's sass-loader only uses the legacy API, which we can't change.
+                    silenceDeprecations: ['legacy-js-api'],
+                },
+            },
+        },
         {
           resolve: `gatsby-transformer-remark`,
           options: {

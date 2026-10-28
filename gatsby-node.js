@@ -1,12 +1,26 @@
 const path = require('path')
 
-exports.onCreateWebpackConfig = ({ _stage, actions, _loaders }) => {
+exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
     actions.setWebpackConfig({
         experiments: {
             // This was necessary to have the Nickel WASM REPL work with Webpack
             asyncWebAssembly: true,
         },
     })
+
+    if (stage === 'build-javascript') {
+        // Gatsby's default CSS minimizer config runs svgo on the inline SVG data URIs of Bootstrap's
+        // stylesheet, which it fails to parse and reports as errors. They are tiny, so we skip svgo.
+        const config = getConfig();
+        const cssMinimizer = config.optimization.minimizer.find(
+            plugin => plugin.constructor.name === 'CssMinimizerPlugin'
+        );
+
+        if (cssMinimizer) {
+            cssMinimizer.options.minimizerOptions = { preset: ['default', { svgo: false }] };
+            actions.replaceWebpackConfig(config);
+        }
+    }
 };
 
 /* Create redirects from `/user-manual/xxx.md` to `/user-manual/xxx`,

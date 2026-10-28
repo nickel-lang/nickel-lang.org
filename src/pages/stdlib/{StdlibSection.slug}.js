@@ -1,5 +1,6 @@
 import * as React from "react";
 import Layout from "../../components/layout-sidebar";
+import Seo from "../../components/seo"
 import { graphql } from "gatsby";
 import SidebarToc from "../../components/stdlib-toc";
 import { useEffect } from "react";
@@ -129,5 +130,7 @@ export const pageQuery = graphql`
     }
   }
  `;
+
+export const Head = () => <Seo />
 
 export default Stdlib

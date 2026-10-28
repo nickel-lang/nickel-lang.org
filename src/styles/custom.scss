@@ -6,7 +6,7 @@ $theme-colors: (
   "secondary": #8ec5fc,
 );
 
-@import '~bootstrap/scss/bootstrap.scss';
+@use "bootstrap/scss/bootstrap" with ($theme-colors: $theme-colors);
 
 a:hover { text-decoration: none};
 
@@ -62,9 +62,9 @@ a:hover { text-decoration: none};
 /* Augment bootstrap with breakpoint variants of w-100, w-50, and so on. */
 $sizes: ("25": 25%, "50": 50%, "75": 75%, "100": 100%);
 
-@each $breakpoint in map-keys($grid-breakpoints) {
+@each $breakpoint in map.keys(bootstrap.$grid-breakpoints) {
   @each $size, $length in $sizes {
-    @include media-breakpoint-up($breakpoint) {
+    @include bootstrap.media-breakpoint-up($breakpoint) {
       .w-#{$breakpoint}-#{$size} {width: $length !important;}
     }
   }
@@ -108,7 +108,7 @@ $sizes: ("25": 25%, "50": 50%, "75": 75%, "100": 100%);
   100% { transform:translate(0,20px); opacity: 0; }
 }
 
-@include media-breakpoint-up(md) {
+@include bootstrap.media-breakpoint-up(md) {
   .scrollable-column-md {
     overflow-y: scroll;
     height: 100vh;
