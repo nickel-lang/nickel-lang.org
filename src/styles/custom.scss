@@ -1,57 +1,77 @@
 @use "sass:map";
 @use "sass:color";
 
-$theme-colors: (
-  "primary": #e0c3fc,
-  "secondary": #8ec5fc,
+/* Light theme palette (from the Nickel redesign). Values are the sRGB conversions of the
+ * design's oklch tokens. */
+$nk-bg: #fafcfe;
+$nk-bg-alt: #eff2f6;
+$nk-card: #f2f5f9;
+$nk-border: #d7dbe0;
+$nk-text: #1b1f27;
+$nk-text-muted: #525864;
+$nk-accent: #4e3c8e;
+$nk-code: #eef2f7;
+
+$nk-font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+$nk-font-mono: "IBM Plex Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+@use "bootstrap/scss/bootstrap" with (
+  $primary: $nk-accent,
+  $secondary: $nk-text-muted,
+  $body-bg: $nk-bg,
+  $body-color: $nk-text,
+  $border-color: $nk-border,
+  $font-family-sans-serif: $nk-font-sans,
+  $font-family-monospace: $nk-font-mono,
+  $headings-font-weight: 600,
+  $border-radius: 0.4375rem,
+  $link-decoration: none,
 );
 
-@use "bootstrap/scss/bootstrap" with ($theme-colors: $theme-colors);
+:root {
+  --nk-bg: #{$nk-bg};
+  --nk-bg-alt: #{$nk-bg-alt};
+  --nk-card: #{$nk-card};
+  --nk-border: #{$nk-border};
+  --nk-text: #{$nk-text};
+  --nk-text-muted: #{$nk-text-muted};
+  --nk-accent: #{$nk-accent};
+  --nk-accent-hover: #{color.adjust($nk-accent, $lightness: -10%)};
+  --nk-code: #{$nk-code};
+  --nk-font-sans: #{$nk-font-sans};
+  --nk-font-mono: #{$nk-font-mono};
+  --nk-header-height: 64px;
+}
 
 a:hover { text-decoration: none};
 
-/* Correctly style links with our custom primary and secondary colors */
-
-@mixin link($color) {
-  color: $color;
-  &:hover, &:focus {
-    color: color.adjust($color, $lightness: -30%);
-  }
-
-  &.active {
-    background-color: color.adjust($color, $lightness: +10%) !important;
-  }
-}
-
-@mixin link-theme($color) {
-  $selected: map.get($theme-colors, $color);
-  @include link(color.adjust($selected, $lightness: -25%));
-}
+/* Links with our custom primary (accent) and secondary (muted) colors */
 
 .link-primary {
-  @include link-theme("primary");
+  color: $nk-accent !important;
+  &:hover, &:focus {
+    color: color.adjust($nk-accent, $lightness: -10%) !important;
+  }
 }
 
 .link-secondary {
-  @include link-theme("secondary");
-}
-
-.link-footer {
-  color: #757575;
+  color: $nk-text-muted !important;
   &:hover, &:focus {
-    color: black;
+    color: $nk-accent !important;
   }
 }
 
-.horizontal-sep {
-  height: 5px;
-  background: map.get($theme-colors, "primary");
+.link-footer {
+  color: $nk-accent;
+  &:hover, &:focus {
+    color: color.adjust($nk-accent, $lightness: -10%);
+  }
 }
 
 .content {
   h1, h2, h3, h4, h5 {
     margin-bottom: 0.5em;
-    margin-top: 2.5em;
+    margin-top: 2em;
   }
 
   h1:first-child {
@@ -70,47 +90,9 @@ $sizes: ("25": 25%, "50": 50%, "75": 75%, "100": 100%);
   }
 }
 
-/* Animation of the landing page's scrolldown arrow */
-
-.scroll-down-arrow {
-  height: 60px;
-  width: 80px;
-  margin: 0px 0 0 -40px;
-  line-height: 60px;
-  position: absolute;
-  left: 50%;
-  bottom: 0px;
-  color: black;
-  text-align: center;
-  font-size: 70px;
-  z-index: 100;
-  text-decoration: none;
-  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
-
-  -webkit-animation: ca3_fade_move_down 1.5s ease-in-out infinite;
-  -moz-animation:    ca3_fade_move_down 1.5s ease-in-out infinite;
-  animation:         ca3_fade_move_down 1.5s ease-in-out infinite;
-}
-
-@-webkit-keyframes ca3_fade_move_down {
-  0%   { -webkit-transform:translate(0,-20px); opacity: 0;  }
-  50%  { opacity: 1;  }
-  100% { -webkit-transform:translate(0,20px); opacity: 0; }
-}
-@-moz-keyframes ca3_fade_move_down {
-  0%   { -moz-transform:translate(0,-20px); opacity: 0;  }
-  50%  { opacity: 1;  }
-  100% { -moz-transform:translate(0,20px); opacity: 0; }
-}
-@keyframes ca3_fade_move_down {
-  0%   { transform:translate(0,-20px); opacity: 0;  }
-  50%  { opacity: 1;  }
-  100% { transform:translate(0,20px); opacity: 0; }
-}
-
 @include bootstrap.media-breakpoint-up(md) {
   .scrollable-column-md {
-    overflow-y: scroll;
-    height: 100vh;
+    overflow-y: auto;
+    height: calc(100vh - var(--nk-header-height));
   }
 }

@@ -6,7 +6,6 @@ import SidebarToc from "../../components/stdlib-toc";
 import { useEffect } from "react";
 
 import Prism from "prismjs";
-import "prismjs/themes/prism-tomorrow.css";
 import nickelLanguageDefinition from "../../prism/nickel";
 
 import ReactMarkdown from "react-markdown";
@@ -109,7 +108,7 @@ const Stdlib = ({data}) => {
       children={
         <div
           className={
-            "container content-main-container content documentation-page"
+            "container content-main-container content documentation-page doc-article"
           }
         >
           <h2>{name}</h2>
