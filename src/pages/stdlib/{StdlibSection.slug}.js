@@ -42,13 +42,13 @@ const Stdlib = ({data}) => {
                         {type ? (
                             <div className={'stdlib-signature-row'}>
                                 <dt>Signature</dt>
-                                <dd><code>{type}</code></dd>
+                                <dd><code className={'language-nickel'}>{type}</code></dd>
                             </div>
                         ) : ""}
                         {contracts.map((ctr, index) => (
                             <div key={`ctr-${index}`} className={'stdlib-signature-row stdlib-contract'}>
                                 <dt>Contract</dt>
-                                <dd><code>{ctr}</code></dd>
+                                <dd><code className={'language-nickel'}>{ctr}</code></dd>
                             </div>
                         ))}
                     </dl>

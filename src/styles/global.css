@@ -702,10 +702,6 @@ pre[class*="language-"],
     white-space: pre-wrap;
 }
 
-.documentation-page .stdlib-contract code {
-    color: var(--nk-accent) !important;
-}
-
 .documentation-page .stdlib-module-name {
     font-family: var(--nk-font-mono);
     font-size: 2rem;
