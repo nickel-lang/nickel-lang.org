@@ -594,6 +594,7 @@ pre[class*="language-"],
     max-width: 860px;
 }
 
+/* Left-aligned article next to a sidebar (getting started is centered, with no sidebar) */
 .doc-article.container {
     margin-left: 0;
     padding-left: var(--nk-gutter);
@@ -621,8 +622,8 @@ pre[class*="language-"],
 }
 
 .documentation-page :not(pre) > code {
-    background: var(--nk-code) !important;
-    color: var(--nk-text) !important;
+    background: var(--nk-code);
+    color: var(--nk-text);
     padding: 2px 6px;
     border-radius: 4px;
     font-size: 0.875em;
@@ -674,8 +675,7 @@ pre[class*="language-"],
 }
 
 .documentation-page .stdlib-signature code {
-    background: none !important;
-    color: var(--nk-text) !important;
+    background: none;
     padding: 0;
     font-size: inherit;
     white-space: pre-wrap;
