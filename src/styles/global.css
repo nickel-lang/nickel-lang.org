@@ -7,7 +7,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6, .title-font {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--nk-font-sans);
     font-weight: 600;
     color: var(--nk-text);
@@ -25,24 +25,8 @@ h1 {
     letter-spacing: -0.01em;
 }
 
-.main-subtitle {
-    font-size: 1.25rem;
-    color: var(--nk-text-muted);
-}
-
-.main-text {
-    font-size: 1.125rem;
-    line-height: 1.6;
-}
-
 .playground-loader {
     font-size: 1.125rem;
-    line-height: 1.5;
-    color: var(--nk-text-muted);
-}
-
-.secondary-text {
-    font-size: 1rem;
     line-height: 1.5;
     color: var(--nk-text-muted);
 }
@@ -823,11 +807,6 @@ pre[class*="language-"],
 .sidebar-link-active {
     color: var(--nk-accent) !important;
     font-weight: 600;
-}
-
-.list-elt {
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
 }
 
 .markdown-table {
