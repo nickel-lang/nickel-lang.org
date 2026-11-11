@@ -29,7 +29,7 @@ const Stdlib = ({data}) => {
     };
 
     const HeaderWithTypes = ({id, name, type, contracts}) => {
-        const hasSignature = type || contracts.length;
+        const hasSignature = type || contracts.length > 0;
 
         return (
             <React.Fragment>
@@ -37,14 +37,14 @@ const Stdlib = ({data}) => {
                     <a href={`#${id}`} aria-label={`${id} permalink`} className={`anchor before`}><AnchorIcon /></a>
                     {name}
                 </h3>
-                {hasSignature ? (
+                {hasSignature && (
                     <dl className={'stdlib-signature'}>
-                        {type ? (
+                        {type && (
                             <div className={'stdlib-signature-row'}>
                                 <dt>Signature</dt>
                                 <dd><code className={'language-nickel'}>{type}</code></dd>
                             </div>
-                        ) : ""}
+                        )}
                         {contracts.map((ctr, index) => (
                             <div key={`ctr-${index}`} className={'stdlib-signature-row stdlib-contract'}>
                                 <dt>Contract</dt>
@@ -52,7 +52,7 @@ const Stdlib = ({data}) => {
                             </div>
                         ))}
                     </dl>
-                ) : ""}
+                )}
             </React.Fragment>
         );
     };

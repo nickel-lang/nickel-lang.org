@@ -425,16 +425,12 @@ pre[class*="language-"],
     overflow: auto;
 }
 
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
+.token.comment {
     color: #6b7280;
     font-style: italic;
 }
 
-.token.punctuation,
-.token.operator {
+.token.punctuation {
     color: var(--nk-text-muted);
 }
 
@@ -446,46 +442,24 @@ pre[class*="language-"],
     font-weight: 500;
 }
 
-.token.string,
-.token.char,
-.token.attr-value,
-.token.regex {
+.token.string {
     color: #2f6f3e;
 }
 
 .token.number,
-.token.constant,
-.token.symbol {
+.token.constant {
     color: #a3501f;
 }
 
 .token.function,
-.token.class-name,
-.token.builtin {
+.token.builtin,
+.token.operator {
     color: #1f5f9e;
 }
 
 .token.property,
-.token.tag,
-.token.attr-name,
 .token.variable {
     color: #8a3a6e;
-}
-
-.token.deleted {
-    color: #c0353a;
-}
-
-.token.inserted {
-    color: #2f6f3e;
-}
-
-.token.bold {
-    font-weight: bold;
-}
-
-.token.italic {
-    font-style: italic;
 }
 
 .command-line-prompt > span:before {
