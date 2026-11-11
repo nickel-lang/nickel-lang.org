@@ -1,3 +1,15 @@
+/* Horizontal page gutter, shared by the header, footer and page content */
+
+:root {
+    --nk-gutter: 48px;
+}
+
+@media (max-width: 767.98px) {
+    :root {
+        --nk-gutter: 20px;
+    }
+}
+
 /* Base typography */
 
 body {
@@ -96,7 +108,7 @@ h1 {
 }
 
 .site-header-inner {
-    padding: 0 48px;
+    padding: 0 var(--nk-gutter);
 }
 
 .site-brand {
@@ -140,7 +152,8 @@ h1 {
 
 @media (max-width: 767.98px) {
     .site-header-inner {
-        padding: 12px 20px;
+        padding-top: 12px;
+        padding-bottom: 12px;
     }
 
     .site-nav {
@@ -172,7 +185,7 @@ h1 {
     justify-content: space-between;
     align-items: center;
     gap: 12px;
-    padding: 32px 48px;
+    padding: 32px var(--nk-gutter);
     border-top: 1px solid var(--nk-border);
     color: var(--nk-text-muted);
     font-size: 0.8125rem;
@@ -193,16 +206,10 @@ h1 {
     color: var(--nk-accent-hover);
 }
 
-@media (max-width: 767.98px) {
-    .site-footer {
-        padding: 28px 20px;
-    }
-}
-
 /* Landing page */
 
 .landing-section {
-    padding: 0 48px;
+    padding: 0 var(--nk-gutter);
 }
 
 .hero {
@@ -340,11 +347,6 @@ h1 {
 }
 
 @media (max-width: 767.98px) {
-    .landing-section {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
     .hero {
         padding-top: 40px;
         padding-bottom: 48px;
@@ -594,15 +596,8 @@ pre[class*="language-"],
 
 .doc-article.container {
     margin-left: 0;
-    padding-left: 48px;
-    padding-right: 48px;
-}
-
-@media (max-width: 767.98px) {
-    .doc-article.container {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+    padding-left: var(--nk-gutter);
+    padding-right: var(--nk-gutter);
 }
 
 .documentation-page h1 {
