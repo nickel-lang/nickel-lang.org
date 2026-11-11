@@ -29,40 +29,30 @@ const Stdlib = ({data}) => {
     };
 
     const HeaderWithTypes = ({id, name, type, contracts}) => {
-        const Header = ({content}) => {
-            return (
-                <h3 id={id} style={{'position': 'relative'}}>
-                    <a href={`#${id}`} aria-label={`${id} permalink`} class={`anchor before`}><AnchorIcon /></a>
-                    <code className={'language-nickel'}>{content}</code>
-                </h3>
-            );
-        }
-        
-        if(!type && !contracts.length) {
-            return (<Header content={name} />);
-        }
-
-        if(type && !contracts.length) {
-            return (<Header content={`${name} : ${type}`} />);
-        }
-
-        if(!type && contracts) {
-            return (
-                <React.Fragment>
-                <Header content={`${name} | ${contracts[0]}`} />
-                {contracts.slice(1).map((ctr) => {
-                    return (<h4><code className={'language-nickel'}>{name} | {ctr}</code></h4>);
-                })}
-                </React.Fragment>
-            );
-        }
+        const hasSignature = type || contracts.length;
 
         return (
             <React.Fragment>
-            <Header content={`${name} : ${type}`} />
-            {contracts.map((ctr) => {
-                return (<h4><code className={'language-nickel'}>{name} | {ctr}</code></h4>);
-            })}
+                <h3 id={id} className={'stdlib-entry-name'} style={{'position': 'relative'}}>
+                    <a href={`#${id}`} aria-label={`${id} permalink`} className={`anchor before`}><AnchorIcon /></a>
+                    {name}
+                </h3>
+                {hasSignature ? (
+                    <dl className={'stdlib-signature'}>
+                        {type ? (
+                            <div className={'stdlib-signature-row'}>
+                                <dt>Signature</dt>
+                                <dd><code>{type}</code></dd>
+                            </div>
+                        ) : ""}
+                        {contracts.map((ctr, index) => (
+                            <div key={`ctr-${index}`} className={'stdlib-signature-row stdlib-contract'}>
+                                <dt>Contract</dt>
+                                <dd><code>{ctr}</code></dd>
+                            </div>
+                        ))}
+                    </dl>
+                ) : ""}
             </React.Fragment>
         );
     };
@@ -87,7 +77,7 @@ const Stdlib = ({data}) => {
             <ReactMarkdown components={markdownComponents}>
             {v.documentation}
             </ReactMarkdown>
-            <hr/>
+            <hr className={'stdlib-entry-sep'}/>
             <DocEntries prefix={id} fields={v.fields} />
             </React.Fragment>
         );
@@ -108,10 +98,10 @@ const Stdlib = ({data}) => {
       children={
         <div
           className={
-            "container content-main-container content documentation-page doc-article"
+            "container content-main-container content documentation-page doc-article stdlib-page"
           }
         >
-          <h2>{name}</h2>
+          <h1 className={"stdlib-module-name"}>{name}</h1>
           <DocEntries prefix={``} fields={object} />
         </div>
       }

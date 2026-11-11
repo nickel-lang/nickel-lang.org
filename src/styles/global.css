@@ -650,14 +650,91 @@ pre[class*="language-"],
     white-space: normal;
 }
 
-.documentation-page h3 > code,
-.documentation-page h4 > code {
-    display: inline-block;
-    padding: 4px 10px !important;
-    font-size: 0.8em;
-    font-weight: 500;
+/* Standard library entries */
+
+.documentation-page .stdlib-entry-name {
+    font-family: var(--nk-font-mono);
+    font-size: 1.1875rem;
+    font-weight: 600;
+    margin: 1.75rem 0 14px;
+    word-break: break-word;
+}
+
+.stdlib-signature {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0 0 16px;
+    padding: 14px 18px;
+    background: var(--nk-code);
     border: 1px solid var(--nk-border);
-    white-space: pre-wrap !important;
+    border-radius: 8px;
+    font-family: var(--nk-font-mono);
+    font-size: 0.8125rem;
+}
+
+.stdlib-signature-row {
+    display: flex;
+    gap: 16px;
+}
+
+.stdlib-signature dt {
+    width: 88px;
+    flex-shrink: 0;
+    padding-top: 2px;
+    color: var(--nk-text-muted);
+    font-weight: 400;
+    font-size: 0.65625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.stdlib-signature dd {
+    margin: 0;
+    min-width: 0;
+}
+
+.documentation-page .stdlib-signature code {
+    background: none !important;
+    color: var(--nk-text) !important;
+    padding: 0;
+    font-size: inherit;
+    white-space: pre-wrap;
+}
+
+.documentation-page .stdlib-contract code {
+    color: var(--nk-accent) !important;
+}
+
+.documentation-page .stdlib-module-name {
+    font-family: var(--nk-font-mono);
+    font-size: 2rem;
+    margin: 0 0 8px;
+}
+
+/* Headings inside an entry's documentation (e.g. "Examples") are small labels */
+.stdlib-page h4,
+.stdlib-page h5,
+.stdlib-page h6 {
+    margin: 20px 0 8px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--nk-text-muted);
+}
+
+.stdlib-page pre {
+    margin-top: 0;
+}
+
+.sidebar ul ul li {
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+}
+
+.documentation-page hr.stdlib-entry-sep {
+    margin: 26px 0 0;
 }
 
 .documentation-page hr {
