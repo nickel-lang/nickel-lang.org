@@ -724,11 +724,6 @@ pre[class*="language-"],
     margin-top: 0;
 }
 
-.sidebar ul ul li {
-    padding-top: 0.1em;
-    padding-bottom: 0.1em;
-}
-
 .documentation-page hr.stdlib-entry-sep {
     margin: 26px 0 0;
 }
@@ -772,17 +767,17 @@ pre[class*="language-"],
 }
 
 .sidebar-scroll-box {
-    padding: 36px 12px;
+    padding: 36px 20px;
 }
 
 .sidebar-header h3 {
     font-family: var(--nk-font-sans);
-    font-size: 0.6875rem;
+    font-size: 0.8125rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--nk-text-muted);
-    margin-bottom: 14px;
+    margin-bottom: 16px;
 }
 
 .sidebar ul,
@@ -792,9 +787,8 @@ pre[class*="language-"],
 }
 
 .sidebar ol {
-    padding-left: 2.25rem;
+    padding-left: 2.5rem;
     color: var(--nk-text-muted);
-    font-size: 0.8125rem;
 }
 
 .sidebar > .sidebar-scroll-box > ul {
@@ -809,13 +803,16 @@ pre[class*="language-"],
     margin: 4px 0 4px 2px;
 }
 
-.sidebar a {
-    font-size: 0.875rem;
-    line-height: 1.4;
+/* Like the previous site, the table of contents is set noticeably larger than body text.
+ * Sizes are carried by list items (not links) so that list numbering scales along. */
+.sidebar-scroll-box > ul > li,
+.sidebar-scroll-box > ol > li {
+    font-size: 1.25rem;
+    line-height: 1.3;
 }
 
-.sidebar a.link-secondary {
-    font-size: 0.8125rem;
+.sidebar li li {
+    font-size: 0.85em;
 }
 
 .sidebar li {
