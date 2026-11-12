@@ -15,13 +15,12 @@ const codeExample = `let conf = {
   description = "My cool app!"
 } in
 
-let SemanticVersion = fun label value =>
+let SemanticVersion = std.contract.from_validator (fun value =>
   let pattern = "^\\\\d{1,2}\\\\.\\\\d{1,2}(\\\\.\\\\d{1,2})?$" in
   if std.string.is_match pattern value then
-    value
+    'Ok
   else
-    let msg = "invalid version number" in
-    std.contract.blame_with_message msg label
+    'Error { message = "invalid version number" })
   in
 
 let AppSchema = {
