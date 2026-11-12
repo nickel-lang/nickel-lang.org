@@ -488,6 +488,15 @@ pre[class*="language-"],
     color: #8F908A;
 }
 
+/* Don't apply the documentation inline code style to the playground output */
+.documentation-page .ansi-monokai code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    font-size: inherit;
+    white-space: inherit;
+}
+
 .ansi-black-bg {
     color: #002b36;
 }
