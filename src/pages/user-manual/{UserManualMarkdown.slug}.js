@@ -15,11 +15,11 @@ const UserManual = ({data}) => {
         <div className="container-fluid">
             <div className={"row"}>
                 {/*col-md-4 col-lg-3 col-xl-3*/}
-                <div className={"col-xl-3 col-lg-4 col-md-5 order-1"}>
+                <div className={"col-xl-3 col-lg-4 col-md-5 order-1 sidebar-column"}>
                     <UserManualToc {...sidebarProps}/>
                 </div>
                 <div className={"col-xl-9 col-lg-8 col-md-7 order-2"}>
-                    <div className={"container content-main-container content documentation-page"} dangerouslySetInnerHTML={{ __html: html }}>
+                    <div className={"container content-main-container content documentation-page doc-article"} dangerouslySetInnerHTML={{ __html: html }}>
                     </div>
                 </div>
             </div>
