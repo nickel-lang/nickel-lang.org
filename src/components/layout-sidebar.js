@@ -33,7 +33,7 @@ export default function Layout({ children, sidebar }) {
             <div className={"row"}>
               <div
                 className={
-                  "col-xl-3 col-lg-4 col-md-5 col-12 order-1 scrollable-column-md"
+                  "col-xl-3 col-lg-4 col-md-5 col-12 order-1 scrollable-column-md sidebar-column"
                 }
               >
                 <div className="column-content">{sidebar}</div>

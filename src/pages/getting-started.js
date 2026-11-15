@@ -6,7 +6,6 @@ import Seo from "../components/seo"
 import Prism from "prismjs";
 import "prismjs/components/prism-bash";
 import "prismjs/components/prism-yaml";
-import "prismjs/themes/prism-tomorrow.css";
 import "prismjs/plugins/command-line/prism-command-line";
 import "prismjs/plugins/command-line/prism-command-line.css";
 import Playground from "../components/playground-clientside";

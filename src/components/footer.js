@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faGithub,
@@ -12,29 +11,17 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => (
-    <footer className="bg-secondary text-center">
-        <div className="container pt-3">
-            <section>
-                <Link className="btn text-black btn-outline btn-floating m-1" to="https://twitter.com/nickel_lang" role="button"
-                ><FontAwesomeIcon color="black" icon={faTwitter}/></Link>
-
-                <Link className="btn btn-outline btn-floating m-1" to="https://github.com/tweag/nickel" role="button"
-                ><FontAwesomeIcon color="black" icon={faGithub}/></Link>
-
-                <Link className="btn btn-outline btn-floating m-1" to="https://github.com/tweag/nickel/discussions" role="button"
-                ><FontAwesomeIcon color="black" icon={faComments}/></Link>
-
-                <Link className="btn btn-outline btn-floating m-1" to="https://discord.gg/vYDnJYBmax" role="button"
-                ><FontAwesomeIcon color="black" icon={faMessage}/></Link>
-
-                <Link className="btn btn-outline-dark btn-floating m-1 ms-4" to="#" role="button"
-                ><FontAwesomeIcon color="black" icon={faArrowUp}/></Link>
-            </section>
+    <footer className="site-footer">
+        <div>
+            © 2021 Copyright: <a href={'https://github.com/tweag/nickel/graphs/contributors'} className={'link-footer'}>Nickel contributors</a>
         </div>
-        <hr/>
-        <div className="text-center pb-3">
-            © 2021 Copyright: <Link to={'https://github.com/tweag/nickel/graphs/contributors'} className={'link-footer'}>Nickel contributors</Link>
-        </div>
+        <nav className="site-footer-links">
+            <a href="https://twitter.com/nickel_lang"><FontAwesomeIcon icon={faTwitter}/> Twitter</a>
+            <a href="https://github.com/tweag/nickel"><FontAwesomeIcon icon={faGithub}/> GitHub</a>
+            <a href="https://github.com/tweag/nickel/discussions"><FontAwesomeIcon icon={faComments}/> Discussions</a>
+            <a href="https://discord.gg/vYDnJYBmax"><FontAwesomeIcon icon={faMessage}/> Discord</a>
+            <a href="#" aria-label="Back to top"><FontAwesomeIcon icon={faArrowUp}/></a>
+        </nav>
     </footer>
 )
 
